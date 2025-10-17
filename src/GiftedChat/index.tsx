@@ -449,7 +449,7 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
 
 function GiftedChatWrapper<TMessage extends IMessage = IMessage> (props: GiftedChatProps<TMessage>) {
   return (
-    <KeyboardProvider>
+    <KeyboardProvider statusBarTranslucent={Platform.OS === 'android'}>
       <GiftedChat<TMessage> {...props} />
     </KeyboardProvider>
   )
